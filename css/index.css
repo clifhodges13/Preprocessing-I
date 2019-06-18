@@ -249,7 +249,7 @@ body {
   padding: 0 2%;
 }
 .header .nav-container .nav a:hover {
-  border-bottom: 5px solid #f2f2f3;
+  border-bottom: 1px solid #f2f2f3;
 }
 .header .banner {
   display: flex;
@@ -328,6 +328,7 @@ body {
   transform: translateY(-55%);
   height: 50px;
   width: 120vw;
+  border: 3px solid #f2f2f3;
   border-radius: 10px;
   background: linear-gradient(to right, rgba(0, 102, 100, 0.5), rgba(84, 196, 196, 0.5)), url(/img/logo-img-transparent-box.png);
   background-attachment: fixed, fixed;
@@ -408,6 +409,7 @@ body {
   transform: translateY(-55%);
   height: 50px;
   width: 120vw;
+  border: 3px solid #f2f2f3;
   border-radius: 10px;
   background: linear-gradient(to left, rgba(34, 63, 153, 0.5), rgba(93, 122, 188, 0.5)), url(/img/logo-img-transparent-box.png);
   background-attachment: fixed, fixed;
@@ -470,6 +472,7 @@ body {
   transform: translateY(-55%);
   height: 50px;
   width: 120vw;
+  border: 3px solid #f2f2f3;
   border-radius: 10px;
   background: linear-gradient(to right, rgba(0, 102, 100, 0.5), rgba(84, 196, 196, 0.5)), url(/img/logo-img-transparent-box.png);
   background-attachment: fixed,
@@ -508,6 +511,8 @@ body {
   width: 200vw;
   transform: translateX(-50%);
   position: relative;
+  border: 3px solid #f2f2f3;
+  border-radius: 10px;
 }
 .contact {
   height: 90vh;

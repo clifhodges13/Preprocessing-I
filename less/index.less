@@ -75,10 +75,19 @@ table {
 ///////////////////////
 
 .displayFlex(@flow, @justify, @align) {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: @flow;
-	justify-content: @justify;
-	align-items: @align;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: @flow;
+	        flex-flow: @flow;
+	-webkit-box-pack: @justify;
+	    -ms-flex-pack: @justify;
+	        justify-content: @justify;
+	-webkit-box-align: @align;
+	    -ms-flex-align: @align;
+	        align-items: @align;
 }
 
 .fontUppercase(@size) {
@@ -94,9 +103,11 @@ table {
 }
 
 .btnHover(@transform, @bg) {
-	transform: @transform;
+	-webkit-transform: @transform;
+	        transform: @transform;
 	background: @bg;
-	box-shadow: 0 10% 5% rgba(0,0,0,.6);
+	-webkit-box-shadow: 0 10% 5% rgba(0,0,0,.6);
+	        box-shadow: 0 10% 5% rgba(0,0,0,.6);
 	border: none;
 }
 
@@ -108,19 +119,32 @@ table {
 // Animations
 /////////////////////////
 
-@keyframes breathe {
+@-webkit-keyframes breathe {
 	from {
-		transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		        transform: scale(1.3);
 	}
 
 	to {
-		transform: scale(1);
+		-webkit-transform: scale(1);
+		        transform: scale(1);
+	}
+}@keyframes breathe {
+	from {
+		-webkit-transform: scale(1.3);
+		        transform: scale(1.3);
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		        transform: scale(1);
 	}
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }		
 
 html, body {
@@ -143,6 +167,7 @@ html {
 
 body {
 	max-width: 100vw;
+	background: -webkit-gradient(linear, right top, left top, from(@darkerBlue), to(@teal)), url(../img/bg-shape.png);
 	background: linear-gradient(to left, @darkerBlue, @teal), url(../img/bg-shape.png);
 	background-position: center, right;
 	background-size: cover, contain;
@@ -183,7 +208,8 @@ body {
 
 			@media (max-width: 900px) {
 				.displayFlex(row nowrap, center, center);
-				transform: translateX(-5%);
+				-webkit-transform: translateX(-5%);
+				        transform: translateX(-5%);
 			}
 
 			&-img {
@@ -218,6 +244,7 @@ body {
 				margin: 10% 5%;
 				position: relative;
 				border: none;
+				-webkit-transition: all 1s ease-out;
 				transition: all 1s ease-out;
 				padding: 0 2%;
 
@@ -242,15 +269,20 @@ body {
 			position: absolute;
 			left: 0;
 			top: -50%;
-			transform: translateY(35%);
-			clip-path: ellipse(90% at 0% 50%);
+			-webkit-transform: translateY(35%);
+			        transform: translateY(35%);
+			-webkit-clip-path: ellipse(90% at 0% 50%);
+			        clip-path: ellipse(90% at 0% 50%);
 			background: radial-gradient(rgba(@blue, .3), rgba(@lightBlue, .3));
-			transform-origin: top;
-			animation: breathe 15s infinite alternate;
+			-webkit-transform-origin: top;
+			        transform-origin: top;
+			-webkit-animation: breathe 15s infinite alternate;
+			        animation: breathe 15s infinite alternate;
 			z-index: -1;
 
 			@media (max-width: 900px) {
-				animation: none;
+				-webkit-animation: none;
+				        animation: none;
 				top: -60%;
 				left: -25%;
 			}
@@ -284,6 +316,7 @@ body {
 
 .skills {
 	height: 90vh;
+
 	.section-title {
 		.fontUppercase(3rem);
 		position: relative;
@@ -298,10 +331,13 @@ body {
 			position: absolute;
 			top: 50%;
 			left: -3%;
-			transform: translateY(-55%);
+			-webkit-transform: translateY(-55%);
+			        transform: translateY(-55%);
 			height: 50px;
 			width: 120vw;
 			.borderSolid(3px, @white, 10px);
+			background: -webkit-gradient(linear, left top, right top, from(rgba(@green, .5)), to(rgba(@lightGreen, .5))),
+			url(/img/logo-img-transparent-box.png);
 			background: linear-gradient(to right, rgba(@green, .5), rgba(@lightGreen, .5)),
 			url(/img/logo-img-transparent-box.png);
 			background-attachment: fixed, fixed;
@@ -379,10 +415,13 @@ body {
 			position: absolute;
 			top: 50%;
 			right: -3%;
-			transform: translateY(-55%);
+			-webkit-transform: translateY(-55%);
+			        transform: translateY(-55%);
 			height: 50px;
 			width: 120vw;
 			.borderSolid(3px, @white, 10px);
+			background: -webkit-gradient(linear, right top, left top, from(rgba(@blue, .5)), to(rgba(@lightBlue, .5))),
+				url(/img/logo-img-transparent-box.png);
 			background: linear-gradient(to left, rgba(@blue, .5), rgba(@lightBlue, .5)),
 				url(/img/logo-img-transparent-box.png);
 			background-attachment: fixed, fixed;
@@ -444,10 +483,13 @@ body {
 			position: absolute;
 			top: 50%;
 			left: -3%;
-			transform: translateY(-55%);
+			-webkit-transform: translateY(-55%);
+			        transform: translateY(-55%);
 			height: 50px;
 			width: 120vw;
 			.borderSolid(3px, @white, 10px);
+			background: -webkit-gradient(linear, left top, right top, from(rgba(@green, .5)), to(rgba(@lightGreen, .5))),
+			url(/img/logo-img-transparent-box.png);
 			background: linear-gradient(to right, rgba(@green, .5), rgba(@lightGreen, .5)),
 			url(/img/logo-img-transparent-box.png);
 			background-attachment: fixed,
@@ -492,7 +534,8 @@ body {
 	height: 40px;
 	background: linear-gradient(30deg, @blue, @green);
 	width: 200vw;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
 	position: relative;
 	.borderSolid(3px, @white, 10px);
 }
@@ -514,6 +557,36 @@ body {
 		width: 80%;
 		margin-bottom: 10%;
 	
+		> *::-webkit-input-placeholder {
+			color: rgba(@white, .6);
+			text-align: left;
+			text-indent: 5%;
+
+			&:last-child {
+				vertical-align: sub;
+			}
+		}
+	
+		> *:-ms-input-placeholder {
+			color: rgba(@white, .6);
+			text-align: left;
+			text-indent: 5%;
+
+			&:last-child {
+				vertical-align: sub;
+			}
+		}
+	
+		> *::-ms-input-placeholder {
+			color: rgba(@white, .6);
+			text-align: left;
+			text-indent: 5%;
+
+			&:last-child {
+				vertical-align: sub;
+			}
+		}
+	
 		> *::placeholder {
 			color: rgba(@white, .6);
 			text-align: left;
@@ -526,6 +599,7 @@ body {
 
 		.full-width {
 			width: 100%;
+			background: -webkit-gradient(linear, left top, right top, from(@green), to(@blue));
 			background: linear-gradient(to right, @green, @blue);
 			border: none;
 			margin: 1% 0;
@@ -546,7 +620,8 @@ body {
 			color: @white;
 			.btn(1% 2%, 1px solid @white, transparent);
 			float: right;
-			box-shadow: 0 5% 2rem rgba(@white, 1);
+			-webkit-box-shadow: 0 5% 2rem rgba(@white, 1);
+			        box-shadow: 0 5% 2rem rgba(@white, 1);
 
 			&:hover {
 				.btnHover(translateY(-5%) scale(1.05), linear-gradient(to right, @green, @blue));
@@ -559,6 +634,7 @@ body {
 
 .footer-container {
 	width: 100vw;
+	background: -webkit-gradient(linear, left top, right top, from(@green), to(@blue));
 	background: linear-gradient(to right, @green, @blue);
 	height: 70px;
 	.displayFlex(column nowrap, center, center);
@@ -588,7 +664,9 @@ body {
 		.social {
 			.displayFlex(row nowrap, flex-start, center);
 			width: 25%;
-			flex-grow: 1;
+			-webkit-box-flex: 1;
+			    -ms-flex-positive: 1;
+			        flex-grow: 1;
 			padding: 0 10%;
 
 			@media (max-width: 900px) {

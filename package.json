@@ -1,0 +1,32 @@
+{
+  "name": "clifhodgesresume",
+  "version": "1.0.0",
+  "description": "Clif Hodges Resume",
+  "main": "index.js",
+  "scripts": {
+    "watch": "less-watch-compiler less css index.less",
+    "start": "npm-run-all watch",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/index.css -o css/index.css",
+    "prefix": "less-plugin-autoprefixer -b 'last 10 versions' less/index.less -o css/index.css",
+    "compress:css": "less css/prefix.css css/min.css --style=compressed",
+    "build:css": "npm-run-all prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clifhodges13/Preprocessing-I.git"
+  },
+  "author": "Clifton Hodges",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clifhodges13/Preprocessing-I/issues"
+  },
+  "homepage": "https://github.com/clifhodges13/Preprocessing-I#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "less": "^3.9.0",
+    "less-plugin-autoprefixer": "^2.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.17",
+    "postcss-cli": "^6.1.2"
+  }
+}
